@@ -15,10 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# taskmanager/urls.py
+
 from django.contrib import admin
-from django.urls import path, include  # <-- Imported include
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('core.urls')),  # <-- All requests to /api/ go to core app
+    path('api/', include('core.urls')),         # existing: /api/
+    path('api/auth/', include('users.urls')),   # existing: /api/auth/
+    
+    # ADD THIS LINE: Routes for projects
+    path('api/', include('projects.urls')),     # Projects routes: /api/projects/
 ]
