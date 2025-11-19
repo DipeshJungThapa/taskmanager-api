@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', 
+    'rest_framework',
     'core',
     'users',
     'projects',
     'tasks',
+    'subtasks',
+    'comments'
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication', # <-- Set JWT as default
+        'rest_framework_simplejwt.authentication.JWTAuthentication',  # <-- Set JWT as default
     )
 }

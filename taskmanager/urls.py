@@ -27,6 +27,8 @@ urlpatterns = [
     
     # ADD THIS LINE: Routes for projects
     path('api/', include('projects.urls')),     # Projects routes: /api/projects/
-    path("api/", include("tasks.urls")), # <- ADD THIS LINE
+    path("api/", include("tasks.urls")),
+    path("api/", include("subtasks.urls")),
+    path("api/", include("comments.urls")), # <--- ADD THIS LINE# <- ADD THIS LINE
 ]
 
