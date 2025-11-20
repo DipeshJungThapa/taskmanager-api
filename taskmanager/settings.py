@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'projects',
     'tasks',
     'subtasks',
-    'comments'
+    'comments',
+    'attachments'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,10 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',  # <-- Set JWT as default
     )
 }
+
+
+# Base URL to access files (e.g., http://localhost:8000/media/...)
+MEDIA_URL = '/media/'
+
+# Where files are physically stored on your computer
+MEDIA_ROOT = BASE_DIR / 'media'
