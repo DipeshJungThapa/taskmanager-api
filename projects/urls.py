@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from .views import ProjectViewSet
 
 router = DefaultRouter()
-# The 'r' defines the base route for the ViewSet: /api/projects/
-router.register(r'projects', ProjectViewSet, basename='project')
+# Empty string since the main urls.py already has 'api/projects/' prefix
+router.register(r'', ProjectViewSet, basename='project')
 
 urlpatterns = router.urls

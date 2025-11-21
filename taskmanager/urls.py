@@ -9,17 +9,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('core.urls')),
     path('api/auth/', include('users.urls')),
-
     path('api/projects/', include('projects.urls')),
-
-    # The 'tasks' app must include its own routes, comments, and attachments
+    
+    # Tasks includes nested comments route already
     path('api/tasks/', include('tasks.urls')),
-    path('api/tasks/', include('comments.urls')),
-    path('api/tasks/', include('attachments.urls')),  # New Attachments Router
-
-    # The subtasks line can stay separate or be merged, depending on its structure.
+    # Attachments are nested under tasks
+    path('api/tasks/', include('attachments.urls')),
+    
+    # Standalone endpoints for querying by task
+    path('api/comments/', include('comments.urls')),
+    path('api/attachments/', include('attachments.urls')),
+    
     path('api/subtasks/', include('subtasks.urls')),
-    # Remove the old 'api/comments/' include entirely.
 ]
 
 # REQUIRED for serving media files in development
